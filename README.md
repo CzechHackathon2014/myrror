@@ -4,23 +4,23 @@ Anonymous rating.
 
 ## Running Locally
 
-Make sure you have [Node.js](http://nodejs.org/) installed.
+Make sure you have [Meteor](https://www.meteor.com/) installed.
 
 ```sh
-$ git clone git@github.com:github.com/CzechHackathon2014/myrror.git  # or clone your own fork
-$ cd myrror
-$ npm install
-$ npm start
+meteor
 ```
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
+Your app should now be running on [localhost:3000](http://localhost:3000/).
 
-## Deploying to Heroku
+### Accessing Local MongoDB
+```sh
+meteor mongo
+```
 
-Make sure you have the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
+## Deploying
 
 ```sh
-$ heroku create  # if you need to create new app on Heroku
-$ git push heroku master
-$ heroku open
+meteor deploy myrror.meteor.com
 ```
+                               
+Your app should now be running on [myrror.meteor.com](http://myrror.meteor.com/).

@@ -1,0 +1,30 @@
+<head>
+    <title>MYRROR</title>
+</head>
+
+<body>
+<div class="container">
+    <header>
+        <h1>MYRROR</h1>
+    </header>
+    {{> loginButtons}}
+    {{> upload}}
+</div>
+</body>
+
+<template name="upload">
+    <button class="upload">Upload</button>
+    <img src="empty">
+
+    <form class="question">
+        <input type="text" name="question" placeholder="Ask question here"/>
+    </form>
+</template>
+
+<template name="login">
+    <p>
+        Please log in so you can access your questions later.<br>
+        Your username will never be shown to others!
+    </p>
+    {{> loginButtons}}
+</template>
