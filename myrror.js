@@ -12,7 +12,7 @@ Router.route('/rate');
 
 if (Meteor.isClient) {
 
-//    Session.setDefault("counter", 0);
+    Session.setDefault("counter", 0);
 
 //    Template.upload.helpers({
 //        tasks: function () {
@@ -25,9 +25,8 @@ if (Meteor.isClient) {
 
     Template.upload.events({
         'click .upload': function () {
-//            Session.set("counter", Session.get("counter") + 1);
         },
-        'click .takePicture' : function () {
+        'click .takePicture': function () {
             var cameraOptions = {
                 width: 600,
                 height: 600
@@ -40,8 +39,9 @@ if (Meteor.isClient) {
         'submit .question': function () {
             Questions.insert({
                 text: event.target.question.value,
-                createdAt: new Date()
-//                photo: Session.get("photo")
+                createdAt: new Date(),
+                owner: Meteor.userId(),
+                photo: Session.get("photo")
             });
 
             event.target.question.value = "";
@@ -52,7 +52,18 @@ if (Meteor.isClient) {
 
     Template.rate.helpers({
         photo: function () {
-            return Session.get("photo");
+            return Questions.findOne({ "owner": {$ne: "$userId"}}, {skip: Session.get("counter")}).photo;
+        },
+        counter: function () {
+            return Session.get("counter");
+        }
+    });
+
+
+    Template.rate.events({
+        'click .yes': function () {
+        },
+        'click .no': function () {
         }
     });
 

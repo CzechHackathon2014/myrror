@@ -24,3 +24,8 @@ meteor deploy myrror.meteor.com
 ```
                                
 Your app should now be running on [myrror.meteor.com](http://myrror.meteor.com/).
+
+### Accessing Remote MongoDB
+```sh
+meteor mongo --url myrror.meteor.com  # this will generate connection string with password valid for one minute
+```

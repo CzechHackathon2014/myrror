@@ -19,16 +19,15 @@
 </template>
 
 <template name="upload">
-    <form class="question">
-        <button class="upload">Upload</button>
-        <button class="takePicture">Take a picture</button>
-        {{#if photo}}
-        <div>
-            <img src={{photo}}/>
-        </div>
-        {{/if}}
-        <!--<img src="empty">-->
+    <button class="upload">Upload</button>
+    <button class="takePicture">Take a picture</button>
+    {{#if photo}}
+    <div>
+        <img src={{photo}}>
+    </div>
+    {{/if}}
 
+    <form class="question">
         <input type="text" name="question" placeholder="Ask question here"/>
     </form>
 </template>
@@ -44,9 +43,5 @@
     <p>
         Rate something!
     </p>
-    {{#if photo}}
-    <div>
-        <img src={{photo}}/>
-    </div>
-    {{/if}}
+    <img src={{photo}}>
 </template>
