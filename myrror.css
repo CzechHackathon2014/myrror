@@ -94,6 +94,7 @@ footer {
 
 #sayNo, #sayYes {
     position: fixed;
+    color: white;
     bottom:25px;
     font-size: larger;
     border-radius: 25px;
