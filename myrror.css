@@ -1,5 +1,96 @@
 /* CSS declarations go here */
-body {
+
+body, html {
+ padding: 0;
+ margin: 0;
+}
+
+header {
+    background-color: #F7F7F7;
+}
+
+header::after {
+    content: url('horni-helnik.png');
+    float:left;
+    position:absolute;
+    z-index: 5;
+}
+
+.addComment::after {
+    content: url('dolni-helnik.png');
+    float: right;
+    position: relative;
+    z-index: 5;
+    bottom:0px;
+    width: 47px;
+    height: 42px;
+}
+
+.myhint {
+    padding: 15px 25px 15px 25px;
+    font-size: small;
+    color: #999999;
+} 
+
+
+
+.myprogress {
+    padding: 8px 25px 15px 25px;
+    top: 0px;
+    right: 0px;
+    position: absolute;
+    font-size: larger;
+    color:#FC8C4C;
+}
+
+
+
+.myquestion {
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+
+
+article {
+    position: relative;
+    padding: 0px;
+    overflow: hidden;
+}
+
+
+.addComment {
+    color: white;
+    display: block;
+    position: relative;
+    font-weight: lighter;
+    padding: 15px 0px 15px 0px;
+    width: 100%;
+    background: linear-gradient(to bottom,  rgba(137,255,241,0) 0%,rgba(0,0,0,0.5) 100%); /* W3C */
+}
+
+
+
+.addComment .fui-chat {
+    font-size: smaller;
+}
+
+
+.footer-container {
+    background-color: #FC8C4C !important;
+    height: 100px;
+}
+
+footer { 
+    background-color: rgba(255, 255, 255, 0) !important;
+    display: block;
+    width: 100%;
+    position: fixed;
+    bottom:0;
+}
+
+/*body {
     font-family: sans-serif;
     background-color: #315481;
     background-image: linear-gradient(to bottom, #315481, #918e82 100%);
@@ -123,4 +214,4 @@ header .hide-completed {
     .new-task input {
         padding-bottom: 5px;
     }
-}
+}*/

@@ -1,4 +1,6 @@
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="flat-ui/dist/css/flat-ui.css" rel="stylesheet">
     <title>MyRROR</title>
 </head>
 
@@ -7,25 +9,21 @@
 
 <template name="defaultLayout">
     <div class="container">
-        <header>
-            <h1>MyRROR</h1>
-            {{> loginButtons}}
-        </header>
-
-        <article>
-            {{> yield}}
-        </article>
+        {{> yield}}
+        
     </div>
 </template>
 
 <template name="upload">
-    <button class="upload">Upload</button>
-    <button class="takePicture">Take a picture</button>
-    {{#if photo}}
-    <div>
-        <img src={{photo}}>
-    </div>
-    {{/if}}
+    <form class="question">
+        <button class="upload">Upload</button>
+        <button class="takePicture">Take a picture</button>
+        <div class="photo-placeholder">
+        {{#if photo}}
+            <img src="{{photo}}" width="100%" /> <!---->
+        {{/if}}
+        </div>
+        <!--<img src="empty">-->
 
     <form class="question">
         <input type="text" name="question" placeholder="Ask question here"/>
@@ -40,8 +38,22 @@
 </template>
 
 <template name="rate">
-    <p>
-        Rate something!
-    </p>
-    <img src={{photo}}>
+    <header data-role="header">
+        <div class="myhint">Rate others to get rated</div>
+        <div class="myprogress">2/5</div>
+        <div class="myquestion">&ldquo;Is this the right way to take a selfie?&rdquo;</div>
+    </header>
+
+    <article>
+        <img src="t.jpg"  width="100%" /> <!--{{photo}}-->
+    </article>
+    
+    <footer data-role="footer">
+        <a class="addComment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fui-chat"></span> &nbsp;&nbsp; Add comment</a>
+        <div class="footer-container">
+        <a id="sayNo">No</a>
+        <a>&lt; y &gt;</a>
+        <a id="sayYes">Yes</a>
+    </div>
+    </footer>
 </template>
