@@ -70,7 +70,9 @@ article {
     background: linear-gradient(to bottom,  rgba(137,255,241,0) 0%,rgba(0,0,0,0.5) 100%); /* W3C */
 }
 
-
+.addComment:hover {
+    background: linear-gradient(to bottom,  rgba(137,255,241,0) 0%,rgba(0,0,0,0.8) 100%); /* W3C */
+}
 
 .addComment .fui-chat {
     font-size: smaller;
@@ -88,6 +90,39 @@ footer {
     width: 100%;
     position: fixed;
     bottom:0;
+}
+
+#sayNo, #sayYes {
+    position: fixed;
+    bottom:25px;
+    font-size: larger;
+    border-radius: 25px;
+    border-color: white;
+    border-width: 2px;
+    border-style: solid;
+}
+
+#sayNo {
+    left: -75px;
+    padding: 10px 25px 10px 100px;
+}
+
+#sayYes {
+    right: -75px;
+    padding: 10px 100px 10px 25px;
+}
+
+#sayNo:hover {
+    left: -25px;
+}
+
+#sayYes:hover {
+    right: -25px;
+}
+
+#sayNo:hover, #sayYes:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: #FC8C4C;
 }
 
 /*body {
