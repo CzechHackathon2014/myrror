@@ -1,15 +1,31 @@
-angular.module('starter.controllers', [])
+angular.module('myrror.controllers', [])
 
-.controller('DashCtrl', function($scope) {
+.controller('LoginCtrl', function ($scope, Auth, $location) {
+    $scope.error = {};
+    $scope.user = {};
+
+    $scope.login = function(form) {
+      Auth.login('password', {
+          'email': $scope.user.email,
+          'password': $scope.user.password
+        },
+        function(err) {
+          $scope.errors = {};
+
+          if (!err) {
+            $location.path('/');
+          } else {
+            angular.forEach(err.errors, function(error, field) {
+              form[field].$setValidity('mongoose', false);
+              $scope.errors[field] = error.type;
+            });
+            $scope.error.other = err.message;
+          }
+      });
+    };
+  })
+.controller('SignupCtrl', function($scope) {
 })
 
-.controller('FriendsCtrl', function($scope, Friends) {
-  $scope.friends = Friends.all();
-})
-
-.controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {
-  $scope.friend = Friends.get($stateParams.friendId);
-})
-
-.controller('AccountCtrl', function($scope) {
+.controller('HomeCtrl', function($scope) {
 });
