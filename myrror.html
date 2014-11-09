@@ -19,13 +19,17 @@
     </header>
 
     <div class="uploadContainer">
+        <div class="uploadPositioning">
+            <a class="takePicture fui-photo"></a>
+            <form class="uploadForm">
+                <div class="uplFileCont">
+                    <button class="fakefile uplButton fui-image"> Upload photo</button>
+                        <input type="file" name="imageFile" class="realButton"/>
+                </div>
+            </form>
+            
+        </div>
 
-        <form class="uploadForm">
-            <input type="file" name="imageFile">
-            <button type="submit" class="upload">Upload</button>
-        </form>
-
-        <button class="takePicture">Take a picture</button>
         {{#if photo}}
         <div class="photo-placeholder">
             <img src="{{photo}}"/>

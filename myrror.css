@@ -92,6 +92,10 @@ footer {
     bottom:0;
 }
 
+
+
+
+
 #sayNo, #sayYes {
     position: fixed;
     color: white;
@@ -133,10 +137,19 @@ footer {
     position: relative;
 }
 
+.uploadPositioning {
+    position: absolute;
+    top:95px;
+    margin: 0 auto;
+    display: block;
+    width:100%;
+}
+
+
 input.question {
     position: relative;
-    top: 400px;
-    left: -20px;
+    top: 465px;
+    left: -40px;
     line-height: 35px;
     font-size: 30px;
     border: 0;
@@ -154,6 +167,54 @@ input.question {
 
 .photo-placeholder img {
     width: 477px;
+}
+
+.takePicture::before {
+    font-size: 92pt;
+    background-color: #EDEDED;
+    padding: 10px;
+}
+
+.uplFileCont {
+    position:relative;
+    background-color: #EDEDED;
+    display: inline;
+}
+
+.fakefile {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+.uplButton {
+    font-size: larger;
+    border-radius: 25px;
+    border-color: #CCCCCC;
+    color: #CCCCCC;
+    border-width: 2px;
+    border-style: solid;
+    padding: 5px 20px;
+    background-color: #EDEDED;
+    margin-left: 15px;
+}
+
+.realButton {
+    filter:alpha(opacity: 0);
+    opacity: 0;
+    height:32px;
+    position: relative;
+    z-index: 2;
+}
+
+.uploadForm {
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    top: -35px;
+    height: 50px;
+    background-color: #EDEDED;
 }
 
 /*body {
