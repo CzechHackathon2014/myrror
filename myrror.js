@@ -55,13 +55,9 @@ if (Meteor.isClient) {
             fileReader.onload = function (event) {
                 var dataUrl = event.target.result;
                 template.dataUrl.set(dataUrl);
+                Session.set("photo", dataUrl);
             };
             fileReader.readAsDataURL(file);
-        },
-
-        "submit .uploadForm": function (event, template) {
-            event.preventDefault();
-            Session.set("photo", template.dataUrl.get());
         }
     });
 
