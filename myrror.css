@@ -126,6 +126,35 @@ footer {
     color: #FC8C4C;
 }
 
+.uploadContainer {
+    background: url('question-empty.png') no-repeat top center rgba(237, 237, 237, 0);
+    text-align: center;
+    min-height: 629px;
+    position: relative;
+}
+
+input.question {
+    position: relative;
+    top: 400px;
+    left: -20px;
+    line-height: 35px;
+    font-size: 30px;
+    border: 0;
+}
+
+.photo-placeholder {
+    width: 477px;
+    height: 477px;
+    overflow: hidden;
+    margin-left: -238px;
+    top: 0;
+    left: 50%;
+    position: absolute;
+}
+.photo-placeholder img {
+    width: 477px;
+}
+
 /*body {
     font-family: sans-serif;
     background-color: #315481;

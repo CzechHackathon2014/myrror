@@ -14,18 +14,13 @@ if (Meteor.isClient) {
 
     Session.setDefault("counter", 0);
 
-//    Template.upload.helpers({
-//        tasks: function () {
-//            return Questions.find({});
-//        },
-//        counter: function () {
-//            return Session.get("counter");
-//        }
-//    });
+    Template.upload.helpers({
+        photo: function () {
+            return Session.get("photo");
+        }
+    });
 
     Template.upload.events({
-        'click .upload': function () {
-        },
         'click .takePicture': function () {
             var cameraOptions = {
                 width: 600,
@@ -36,6 +31,7 @@ if (Meteor.isClient) {
                 Session.set("photo", data);
             });
         },
+
         'submit .question': function () {
             Questions.insert({
                 text: event.target.question.value,
@@ -47,8 +43,32 @@ if (Meteor.isClient) {
             event.target.question.value = "";
             Router.go("/rate");
             return false; // Prevent default form submit
+        },
+
+        "change input[type='file']": function (event, template) {
+            var files = event.target.files;
+            if (files.length === 0) {
+                return;
+            }
+            var file = files[0];
+            var fileReader = new FileReader();
+            fileReader.onload = function (event) {
+                var dataUrl = event.target.result;
+                template.dataUrl.set(dataUrl);
+            };
+            fileReader.readAsDataURL(file);
+        },
+
+        "submit .uploadForm": function (event, template) {
+            event.preventDefault();
+            console.log("uploaded: " + template.dataUrl.get());
+            Session.set("photo", template.dataUrl.get());
         }
     });
+
+    Template.upload.created = function () {
+        this.dataUrl = new ReactiveVar();
+    };
 
     Template.rate.helpers({
         photo: function () {

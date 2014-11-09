@@ -10,4 +10,5 @@ accounts-ui
 accounts-password
 mdg:camera
 iron:router
+reactive-var
 

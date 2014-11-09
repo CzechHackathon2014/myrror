@@ -10,23 +10,32 @@
 <template name="defaultLayout">
     <div class="container">
         {{> yield}}
-        
     </div>
 </template>
 
 <template name="upload">
-        <button class="upload">Upload</button>
+    <header data-role="header">
+        <div class="myquestion"></div>
+    </header>
+
+    <div class="uploadContainer">
+
+        <form class="uploadForm">
+            <input type="file" name="imageFile">
+            <button type="submit" class="upload">Upload</button>
+        </form>
+
         <button class="takePicture">Take a picture</button>
         <div class="photo-placeholder">
-        {{#if photo}}
-            <img src="{{photo}}" width="100%" /> <!---->
-        {{/if}}
+            {{#if photo}}
+            <img src="{{photo}}" width="100%"/>
+            {{/if}}
         </div>
-        <!--<img src="empty">-->
 
-    <form class="question">
-        <input type="text" name="question" placeholder="Ask question here"/>
-    </form>
+        <form class="question">
+            <input type="text" name="question" placeholder="Your question" class="question"/>
+        </form>
+    </div>
 </template>
 
 <template name="login">
@@ -39,19 +48,22 @@
 <template name="rate">
     <header data-role="header">
         <div class="myhint">Rate others to get rated</div>
-        <div class="myprogress">2/5</div>
+        <div class="myprogress">{{counter}}/5</div>
         <div class="myquestion">&ldquo;Is this the right way to take a selfie?&rdquo;</div>
     </header>
 
     <article>
-        <img src="t.jpg"  width="100%" /> <!--{{photo}}-->
+        <!--<img src="t.jpg" width="100%"/>-->
+        <img src="{{photo}}" width="100%"/>
     </article>
-    
+
     <footer data-role="footer">
-        <a class="addComment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fui-chat"></span> &nbsp;&nbsp; Add comment</a>
+        <a class="addComment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fui-chat"></span> &nbsp;&nbsp; Add
+            comment</a>
+
         <div class="footer-container">
-        <a id="sayNo">No</a>
-        <a id="sayYes">Yes</a>
-    </div>
+            <a id="sayNo">No</a>
+            <a id="sayYes">Yes</a>
+        </div>
     </footer>
 </template>
