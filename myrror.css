@@ -13,14 +13,14 @@ header::after {
     content: url('horni-helnik.png');
     float:left;
     position:absolute;
-    z-index: 5;
+    z-index: 15;
 }
 
 .addComment::after {
     content: url('dolni-helnik.png');
     float: right;
     position: relative;
-    z-index: 5;
+    z-index: 15;
     bottom:0px;
     width: 47px;
     height: 42px;
@@ -145,6 +145,10 @@ footer {
     width:100%;
 }
 
+.question {
+    z-index: 10;
+    position:relative;
+}
 
 input.question {
     position: relative;
@@ -153,6 +157,7 @@ input.question {
     line-height: 35px;
     font-size: 30px;
     border: 0;
+    
 }
 
 .photo-placeholder {
@@ -167,6 +172,8 @@ input.question {
 
 .photo-placeholder img {
     width: 477px;
+    z-index: 5;
+    position: relative;
 }
 
 .takePicture::before {

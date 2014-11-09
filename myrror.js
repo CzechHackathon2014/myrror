@@ -47,6 +47,7 @@ if (Meteor.isClient) {
 
         "change input[type='file']": function (event, template) {
             var files = event.target.files;
+            var button = event.target;
             if (files.length === 0) {
                 return;
             }
@@ -56,6 +57,7 @@ if (Meteor.isClient) {
                 var dataUrl = event.target.result;
                 template.dataUrl.set(dataUrl);
                 Session.set("photo", dataUrl);
+                button.style.visibility="hidden";
             };
             fileReader.readAsDataURL(file);
         }
