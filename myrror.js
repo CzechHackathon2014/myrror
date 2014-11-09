@@ -61,7 +61,6 @@ if (Meteor.isClient) {
 
         "submit .uploadForm": function (event, template) {
             event.preventDefault();
-            console.log("uploaded: " + template.dataUrl.get());
             Session.set("photo", template.dataUrl.get());
         }
     });

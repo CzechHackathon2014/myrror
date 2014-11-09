@@ -26,11 +26,11 @@
         </form>
 
         <button class="takePicture">Take a picture</button>
+        {{#if photo}}
         <div class="photo-placeholder">
-            {{#if photo}}
-            <img src="{{photo}}" width="100%"/>
-            {{/if}}
+            <img src="{{photo}}"/>
         </div>
+        {{/if}}
 
         <form class="question">
             <input type="text" name="question" placeholder="Your question" class="question"/>
