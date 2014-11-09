@@ -150,6 +150,7 @@ input.question {
     top: 0;
     left: 50%;
     position: absolute;
+    z-index: -1;
 }
 .photo-placeholder img {
     width: 477px;
