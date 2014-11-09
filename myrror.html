@@ -53,7 +53,7 @@
     <header data-role="header">
         <div class="myhint">Rate others to get rated</div>
         <div class="myprogress">{{counter}}/5</div>
-        <div class="myquestion">&ldquo;Is this the right way to take a selfie?&rdquo;</div>
+        <div class="myquestion">&ldquo;{{questionText}}&rdquo;</div>
     </header>
 
     <article>
@@ -68,6 +68,25 @@
         <div class="footer-container">
             <a id="sayNo">No</a>
             <a id="sayYes">Yes</a>
+        </div>
+    </footer>
+</template>
+
+<template name="result">
+    <header data-role="header">
+        <div class="myhint">Check Your Results</div>
+        <div class="myquestion">&ldquo;{{questionText}}&rdquo;</div>
+    </header>
+
+    <article>
+        <img src="{{photo}}" width="100%"/>
+    </article>
+
+    <footer data-role="footer">
+        <div class="footer-container">
+            <a id="noCount">No: {{noCount}}</a>
+            <a id="next">Next</a>
+            <a id="yesCount">Yes: {{yesCount}}</a>
         </div>
     </footer>
 </template>
